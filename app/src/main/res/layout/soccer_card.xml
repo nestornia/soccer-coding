@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/competitionName"
+            style="@style/Widget.MaterialComponents.TextView.CompetitionName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/venueNameAndDate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Premier League" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/venueNameAndDate"
+            style="@style/Widget.MaterialComponents.TextView.LocationAndDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/gl1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/competitionName"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="Etihad Stadium | Sep 12, 2017 at 20:0" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/postponed"
+            style="@style/Widget.MaterialComponents.TextView.AlertBannerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/postponed"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/venueNameAndDate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/glv1"
+            app:layout_constraintTop_toTopOf="@id/competitionName"
+            app:textAllCaps="true" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/homeTeamName"
+            style="@style/Widget.MaterialComponents.TextView.TeamName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/awayTeamName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/gl1"
+            tools:text="Chelsea FC" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/awayTeamName"
+            style="@style/Widget.MaterialComponents.TextView.TeamName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/homeTeamName"
+            tools:text="Qarabag" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/homeTeamScore"
+            style="@style/Widget.MaterialComponents.TextView.TeamScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/awayTeamScore"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/glv1"
+            app:layout_constraintTop_toBottomOf="@id/gl1"
+            tools:text="100" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/awayTeamScore"
+            style="@style/Widget.MaterialComponents.TextView.TeamScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/glv1"
+            app:layout_constraintTop_toBottomOf="@id/homeTeamScore"
+            tools:text="100" />
+
+        <View
+            android:id="@+id/divider"
+            style="@style/VerticalDivider"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent=".5"
+            app:layout_constraintHorizontal_bias=".75"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/gl1" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/dateNum"
+            style="@style/Widget.MaterialComponents.TextView.DateNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/dateShortDay"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/glv1"
+            app:layout_constraintTop_toBottomOf="@id/gl1"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="12" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/dateShortDay"
+            style="@style/Widget.MaterialComponents.TextView.DateDayShort"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/glv1"
+            app:layout_constraintTop_toBottomOf="@id/dateNum"
+            tools:text="SUN" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".4" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".75" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupFixtures"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="dateShortDay,dateNum, divider" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupResults"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="homeTeamScore, awayTeamScore" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
